@@ -1,0 +1,120 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    overflow: hidden;
+    background: black;
+}
+
+/* Animated Background */
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, #00f5ff, #ff00e0, #00ff99, #ff9d00);
+    background-size: 400% 400%;
+    z-index: -1;
+    animation: gradientMove 10s ease infinite;
+    filter: blur(80px);
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Layout */
+main {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Mascot */
+.mascot {
+    width: 200px;
+    max-width: 80%;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 20px rgba(255,255,255,0.8));
+}
+
+/* Floating Animation */
+.floating {
+    animation: float 4s ease-in-out infinite;
+}
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+/* Headline & Description */
+.headline {
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-shadow: 0 0 20px rgba(255, 0, 255, 0.8);
+    margin-bottom: 10px;
+}
+.description {
+    max-width: 500px;
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-bottom: 30px;
+}
+
+/* Buttons */
+.buttons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.btn {
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s;
+}
+.btn.telegram {
+    background: linear-gradient(90deg, #0088cc, #00d4ff);
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.7);
+}
+.btn.twitter {
+    background: linear-gradient(90deg, #1da1f2, #00ffea);
+    box-shadow: 0 0 15px rgba(0, 255, 234, 0.7);
+}
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(255,255,255,0.8);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .headline {
+        font-size: 1.8rem;
+    }
+    .description {
+        font-size: 1rem;
+    }
+    .mascot {
+        width: 150px;
+    }
+}
